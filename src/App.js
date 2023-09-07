@@ -30,21 +30,25 @@ function App() {
           <h1>Loading....</h1>
         ) : (
           <div>
-          {images.length===0 &&<p className="text-black mt-48 text-5xl text-center">No Images found</p>}
-          <div className="flex  bg-slate-600 justify-center items-center w-[100%] h-[100%] flex-wrap">
-            {images.map((item) => (
-              <Imagecard
-                user={item.user}
-                key={item.id}
-                url={item.webformatURL}
-                views={item.views}
-                download={item.downloads}
-                likes={item.likes}
-                tags={item.tags}
-              />
-            ))}
+            {images.length === 0 && (
+              <p className="text-black mt-48 text-5xl text-center">
+                No Images found
+              </p>
+            )}
+            <div className="flex  bg-slate-600 justify-center items-center w-[100%] h-[100%] flex-wrap">
+              {images.map((item) => (
+                <Imagecard
+                  user={item.user}
+                  key={item.id}
+                  url={item.webformatURL}
+                  views={item.views}
+                  download={item.downloads}
+                  likes={item.likes}
+                  tags={item.tags}
+                />
+              ))}
+            </div>
           </div>
-           </div>
         )}
       </div>
     </>
